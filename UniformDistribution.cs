@@ -6,10 +6,10 @@ namespace MonteCarloAlgorithm
 {
     public static class UniformDistribution
     {
-        public static double GetNum(double lower_bound, double upper_bound)
+        public static double GetNum(Boundaries boundaries)
         {
             var random = new Random();
-            return random.NextDouble() * (upper_bound - lower_bound + 1) + lower_bound;
+            return random.NextDouble() * (boundaries.Length + 1) + boundaries.Min;
         }
     }
 }

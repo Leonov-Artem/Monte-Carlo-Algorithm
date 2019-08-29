@@ -6,26 +6,22 @@ namespace MonteCarloAlgorithm
 {
     public class Rectangle : IShape
     {
-        private double _minX;
-        private double _maxX;
-        private double _minY;
-        private double _maxY;
+        private Boundaries _boundX;
+        private Boundaries _boundY;
         public double Length { get; private set; }
         public double Width { get; private set; }
+        public double Area { get; private set; }
 
         public Rectangle(Point b, Point d)
         {
-            _minX = b.X;
-            _maxY = d.Y;
-            _maxX = _minX + (d.X - b.X) + (d.Y - b.Y);
-            _minY = _maxY - 2 * (d.Y - b.Y);
+            var triangle = new Triangle(b, d);
 
-            Length = _maxX - _minX;
-            Width = _maxY - _minY;
+            Width = triangle.Base;
+            Length = triangle.Height + triangle.Base / 2;
+            Area = Length * Width;
+            _boundX = new Boundaries(b.X, b.X + Length);
+            _boundY = new Boundaries(d.Y - triangle.Base, d.Y);
         }
-
-        public double Area()
-            => Length * Width;
 
         public bool Сontains(Point point)
             => throw new NotImplementedException();
