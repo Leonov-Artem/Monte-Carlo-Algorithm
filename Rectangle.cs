@@ -23,7 +23,7 @@ namespace MonteCarloAlgorithm
             _boundY = new Boundaries(d.Y - triangle.Base, d.Y);
         }
 
-        public bool Сontains(Point point)
+        public bool Contains(Point point)
             => throw new NotImplementedException();
     }
 }

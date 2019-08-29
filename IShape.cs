@@ -7,6 +7,6 @@ namespace MonteCarloAlgorithm
     public interface IShape
     {
         double Area { get; }
-        bool Сontains(Point point);
+        bool Contains(Point point);
     }
 }
