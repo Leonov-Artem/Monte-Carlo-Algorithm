@@ -6,8 +6,8 @@ namespace MonteCarloAlgorithm
 {
     public class Semicircle : IShape
     {
-        private Boundaries _boundX;
-        private Boundaries _boundY;
+        public Boundaries boundX;
+        public Boundaries boundY;
         public Point Center { get; private set; }
         public double R { get; private set; }
         public double Area { get; private set; }
@@ -17,8 +17,8 @@ namespace MonteCarloAlgorithm
             Center = new Point(d.X, b.Y);
             R = d.Y - b.Y;
             Area = 0.5 * Math.PI * R * R;
-            _boundX = new Boundaries(Center.X, Center.X + R);
-            _boundY = new Boundaries(d.Y - 2 * R, d.Y);
+            boundX = new Boundaries(Center.X, Center.X + R);
+            boundY = new Boundaries(d.Y - 2 * R, d.Y);
         }
 
         public bool Contains(Point point)

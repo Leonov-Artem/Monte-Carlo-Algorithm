@@ -6,8 +6,8 @@ namespace MonteCarloAlgorithm
 {
     public class Triangle : IShape
     {
-        private Boundaries _boundX;
-        private Boundaries _boundY;
+        public Boundaries boundX;
+        public Boundaries boundY;
         private Point d, b, e;
         public double Base { get; private set; }
         public double Height { get; private set; }
@@ -23,8 +23,8 @@ namespace MonteCarloAlgorithm
             this.d = d;
             this.e = new Point(d.X, d.Y - Base);
 
-            _boundX = new Boundaries(b.X, d.X);
-            _boundY = new Boundaries(d.Y - Base, d.Y);
+            boundX = new Boundaries(b.X, d.X);
+            boundY = new Boundaries(d.Y - Base, d.Y);
         }
 
         public bool Contains(Point point)
