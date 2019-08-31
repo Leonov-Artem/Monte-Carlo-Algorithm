@@ -14,5 +14,12 @@ namespace MonteCarloAlgorithm
             X = x;
             Y = y;
         }
+
+        public static Point Generate(Boundaries boundX, Boundaries boundY)
+        {
+            double x = UniformDistribution.GetNum(boundX);
+            double y = UniformDistribution.GetNum(boundY);
+            return new Point(x, y);
+        }
     }
 }
