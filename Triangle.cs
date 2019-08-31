@@ -18,9 +18,11 @@ namespace MonteCarloAlgorithm
             Base = 2 * (d.Y - b.Y);
             Height = d.X - b.X;
             Area = 0.5 * Base * Height;
+
             this.b = b;
             this.d = d;
             this.e = new Point(d.X, d.Y - Base);
+
             _boundX = new Boundaries(b.X, d.X);
             _boundY = new Boundaries(d.Y - Base, d.Y);
         }
