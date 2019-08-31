@@ -9,7 +9,7 @@ namespace MonteCarloAlgorithm
         public static double GetNum(Boundaries boundaries)
         {
             var random = new Random();
-            return random.NextDouble() * (boundaries.Length + 1) + boundaries.Min;
+            return random.NextDouble() * boundaries.Length + boundaries.Min;
         }
     }
 }

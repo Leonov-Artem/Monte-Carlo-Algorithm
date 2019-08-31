@@ -38,7 +38,7 @@ namespace MonteCarloAlgorithm
                     if (triangle.Contains(point))
                         hit_count++;
                 }
-                else
+                else 
                 {
                     if (semicircle.Contains(point))
                         hit_count++;
@@ -49,6 +49,6 @@ namespace MonteCarloAlgorithm
         }
 
         private bool IsBetween(Boundaries boundaries, double num)
-            => num >= boundaries.Min && num <= boundaries.Max;
+            => num >= boundaries.Min && num < boundaries.Max;
     }
 }
